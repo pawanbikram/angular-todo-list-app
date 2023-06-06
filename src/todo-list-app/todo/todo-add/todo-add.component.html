@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="sn" class="form-label">S.N.</label>
+        <input type="text" class="form-control" id="sn" name="sn" [(ngModel)]="todos.sn">
+    </div>
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" name="title" autocomplete="off" [(ngModel)]="todos.title">
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">description</label>
+        <input type="text" class="form-control" id="description" name="description" autocomplete="off" [(ngModel)]="todos.description">
+    </div>
+    <div class="mb-3 form-check">
+        <label for="active" class="form-check-label">Active</label>
+        <input type="checkbox" class="form-check-input" id="active" name="active" [(ngModel)]="todos.active">
+    </div>
+    <button class="btn btn-sm btn-primary">Add Todo</button>
+</form>

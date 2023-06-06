@@ -1,0 +1,17 @@
+<h2 class="text-center">{{title}}</h2>
+<div class="my-3">
+    <h3>Add Todos</h3>
+    <todo-add-child (todoAdd)="addTodo($event)"></todo-add-child>
+</div>
+<div class="my-3">
+    <div *ngIf="this.todos.length != 0; then thenBlock; else elseBlock;"></div>
+    <ng-template #thenBlock>
+        <h3>Todos List</h3>
+        <div *ngFor="let todo of todos; index as i;">
+            <todo-list-child [todos]="todo" [index]="i" (todoDelete)="deleteTodo($event)" (todoToggle)="toggleTodo($event)"></todo-list-child>
+        </div>
+    </ng-template>
+    <ng-template #elseBlock>
+        <h4>No Todos To Display</h4>
+    </ng-template>
+</div>

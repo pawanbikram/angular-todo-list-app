@@ -1,0 +1,11 @@
+<div class="my-3">
+    <hr>
+    <h4 [ngClass]="{'strike':todos.active ? true : false}">{{todos.title}}</h4>
+    <p [ngClass]="{'strike':todos.active ? true : false}">{{todos.description}}</p>
+    <div class="form-check my-3">
+        <label for="status{{index}}" class="form-check-label">Done</label>
+        <input type="checkbox" class="form-check-input" id="status{{index}}" [checked]="todos.active ? true : false" (click)="onClicked(todos)">
+    </div>
+    <button class="btn btn-sm btn-danger" (click)="onDelete(todos)">Delete</button>
+    <hr>
+</div>
